@@ -32,12 +32,6 @@ const CTASection = () => {
                 Get Started
                 <ArrowRight size={20} />
               </a>
-              <a
-                href="https://github.com/algospider/Ramm"
-                className="w-full sm:w-auto bg-primary-700 text-white border border-primary-500/30 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-primary-800 transition-all"
-              >
-                View Repository
-              </a>
             </div>
           </div>
           

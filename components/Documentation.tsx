@@ -2,33 +2,44 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Settings, Database, Shield, Smartphone } from 'lucide-react';
+import { Database, Shield, Smartphone } from 'lucide-react';
 
 const Documentation = () => {
-  const [activeTab, setActiveTab] = useState('setup');
+  const [activeTab, setActiveTab] = useState('usage');
 
   const tabs = [
-    { id: 'setup', label: 'Setup Guide', icon: <Settings size={18} /> },
-    { id: 'installation', label: 'Installation', icon: <Terminal size={18} /> },
+    { id: 'usage', label: 'Usage Guide', icon: <Smartphone size={18} /> },
     { id: 'database', label: 'DB Schema', icon: <Database size={18} /> },
     { id: 'firebase', label: 'Backend Logic', icon: <Database size={18} /> },
-    { id: 'usage', label: 'Usage', icon: <Smartphone size={18} /> },
+    { id: 'permissions', label: 'Permissions', icon: <Shield size={18} /> },
   ];
 
   const content = {
-    setup: (
+    usage: (
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Developer Environment</h3>
-        <p className="text-slate-600">Clinic Manager is built with a heavy focus on data integrity and modularity.</p>
-        <ul className="space-y-4 list-disc list-inside text-slate-600">
-          <li><span className="font-bold text-slate-900">Android SDK 34</span> (Iguana / Hedgehog)</li>
-          <li><span className="font-bold text-slate-900">Java 17</span> (Toolchain)</li>
-          <li><span className="font-bold text-slate-900">SQLite v3</span> (Local Persistence)</li>
-          <li><span className="font-bold text-slate-900">Firebase Realtime DB</span> (Signaling)</li>
-        </ul>
-        <div className="bg-slate-900 rounded-2xl p-6 text-slate-300 font-mono text-sm">
-          <p className="text-primary-400"># Clone the core repository</p>
-          <p>git clone https://github.com/algospider/Ramm.git</p>
+        <h3 className="text-2xl font-bold text-slate-900">Core Workflow Guide</h3>
+        <div className="space-y-4">
+          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
+            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">1</div>
+            <div>
+              <div className="font-bold text-slate-900">Check-in & Signaling</div>
+              <p className="text-sm text-slate-500">Reception checks in the patient. Use the "Signal" button to instantly notify the doctor's device.</p>
+            </div>
+          </div>
+          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
+            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">2</div>
+            <div>
+              <div className="font-bold text-slate-900">Inventory & Pharmacy</div>
+              <p className="text-sm text-slate-500">Admin manages master stock. Pharmacy staff uses barcode scanner for accurate billing.</p>
+            </div>
+          </div>
+          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
+            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">3</div>
+            <div>
+              <div className="font-bold text-slate-900">Financial Reports</div>
+              <p className="text-sm text-slate-500">View revenue breakdown by category and export as PDF for audit.</p>
+            </div>
+          </div>
         </div>
       </div>
     ),
@@ -50,25 +61,6 @@ const Documentation = () => {
             <p className="text-xs text-slate-500 italic">id, cat_name (Unique)</p>
           </div>
         </div>
-      </div>
-    ),
-    installation: (
-      <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Installation Steps</h3>
-        <ol className="space-y-6 list-decimal list-inside">
-          <li className="text-slate-600">
-            <span className="font-bold text-slate-900 ml-2">Build APK:</span>
-            <p className="mt-2 ml-7">Navigate to `Build &gt; Build Bundle(s) / APK(s) &gt; Build APK(s)` in Android Studio.</p>
-          </li>
-          <li className="text-slate-600">
-            <span className="font-bold text-slate-900 ml-2">Install on Device:</span>
-            <p className="mt-2 ml-7">Transfer the generated `.apk` file to your Android device and install. Ensure "Install from Unknown Sources" is enabled.</p>
-          </li>
-          <li className="text-slate-600">
-            <span className="font-bold text-slate-900 ml-2">Initial Launch:</span>
-            <p className="mt-2 ml-7">Upon first launch, the app will request necessary permissions and local database initialization.</p>
-          </li>
-        </ol>
       </div>
     ),
     firebase: (

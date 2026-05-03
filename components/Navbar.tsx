@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -47,13 +47,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a
-              href="https://github.com/algospider/Ramm"
-              className="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all shadow-md active:scale-95"
-            >
-              <Github size={18} />
-              <span>GitHub</span>
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,16 +75,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <div className="px-3 pt-4">
-              <a
-                href="https://github.com/algospider/Ramm"
-                className="flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl text-base font-semibold shadow-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                <Github size={20} />
-                <span>View on GitHub</span>
-              </a>
-            </div>
           </div>
         </div>
       )}

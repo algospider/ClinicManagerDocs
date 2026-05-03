@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, BookOpen, Zap, Database, ShieldCheck } from 'lucide-react';
+import { BookOpen, Zap, Database, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -32,13 +32,6 @@ const Hero = () => {
                 >
                   <BookOpen size={20} />
                   <span>View Documentation</span>
-                </a>
-                <a
-                  href="https://github.com/algospider/Ramm"
-                  className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white border border-slate-200 text-slate-700 px-10 py-5 rounded-[2rem] font-bold hover:bg-slate-50 transition-all active:scale-95 shadow-sm"
-                >
-                  <Download size={20} />
-                  <span>Download APK</span>
                 </a>
               </div>
               
