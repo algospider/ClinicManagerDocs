@@ -19,11 +19,11 @@ const Hero = () => {
                 <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
                 Next-Gen Healthcare Orchestration
               </span>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">
-                The Operating System for <span className="text-primary-600">Modern Clinics</span>
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8 uppercase">
+                Digital Clinic Manager for <span className="text-primary-600">Modern Practices</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
-                A robust, offline-first clinical workspace designed for seamless coordination between doctors, pharmacy, and management. Empowering local healthcare with enterprise-grade technology.
+                A robust, offline-first clinical workspace designed for seamless coordination between doctors, pharmacy, and management. One App. Complete Clinic Management.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <a

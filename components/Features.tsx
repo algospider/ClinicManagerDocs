@@ -6,40 +6,40 @@ import { Users, ClipboardList, CreditCard, BarChart3, ShieldCheck, Zap } from 'l
 
 const features = [
   {
-    title: "Patient Management",
-    description: "Streamlined registration and check-in with duplicate detection and visit history tracking.",
+    title: "Patient Registration",
+    description: "Quick registration with duplicate detection. Search by name or phone and maintain complete visit history.",
     icon: <Users className="w-6 h-6" />,
     color: "bg-blue-500",
   },
   {
-    title: "Clinical Consultation",
-    description: "Specialized interface for doctors to record symptoms, diagnosis, and prescriptions in seconds.",
-    icon: <ClipboardList className="w-6 h-6" />,
+    title: "Barcode Scanning",
+    description: "Integrated medicine scanning for the pharmacy module. Real-time inventory updates with each sale.",
+    icon: <Zap className="w-6 h-6" />,
     color: "bg-emerald-500",
   },
   {
-    title: "Smart Pharmacy Billing",
-    description: "Integrated pharmacy module with barcode scanning and automated inventory updates.",
+    title: "UPI + Cash Billing",
+    description: "Generate professional print-ready bills with automated totals and multi-mode payment support.",
     icon: <CreditCard className="w-6 h-6" />,
     color: "bg-indigo-500",
   },
   {
-    title: "Reports & Analytics",
-    description: "Gain insights into clinic performance, patient flow, and revenue with detailed daily reports.",
-    icon: <BarChart3 className="w-6 h-6" />,
+    title: "Role-Based Access",
+    description: "Staff authorization and role-based permissions to ensure data security and operational integrity.",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    color: "bg-rose-500",
+  },
+  {
+    title: "Inventory Manager",
+    description: "Manage clinical stock levels from the Admin panel with automated low-stock notifications.",
+    icon: <ClipboardList className="w-6 h-6" />,
     color: "bg-amber-500",
   },
   {
-    title: "Cloud Sync & Offline",
-    description: "Work seamlessly without internet. Data syncs automatically to Firebase once you're back online.",
+    title: "Cloud Sync & Backup",
+    description: "Offline-first architecture that syncs data to the cloud automatically when internet is available.",
     icon: <Zap className="w-6 h-6" />,
     color: "bg-purple-500",
-  },
-  {
-    title: "Enterprise Security",
-    description: "Role-based access control and secure data persistence to protect sensitive patient information.",
-    icon: <ShieldCheck className="w-6 h-6" />,
-    color: "bg-rose-500",
   },
 ];
 
