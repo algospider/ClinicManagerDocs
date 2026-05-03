@@ -4,16 +4,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const screenshots = [
-  { src: "assets/img/1.png", title: "Login Screen" },
-  { src: "assets/img/2.png", title: "Dashboard" },
-  { src: "assets/img/3.png", title: "Patient Search" },
-  { src: "assets/img/4.png", title: "Patient Registration" },
-  { src: "assets/img/5.png", title: "Check-in Manager" },
-  { src: "assets/img/6.png", title: "Clinical Visit" },
-  { src: "assets/img/7.png", title: "Billing Console" },
-  { src: "assets/img/8.png", title: "Inventory List" },
-  { src: "assets/img/9.png", title: "Staff Controls" },
-  { src: "assets/img/10.png", title: "Reporting Analytics" },
+  { src: "/ClinicManagerDocs/assets/img/1.png", title: "Login Screen" },
+  { src: "/ClinicManagerDocs/assets/img/2.png", title: "Dashboard" },
+  { src: "/ClinicManagerDocs/assets/img/3.png", title: "Patient Search" },
+  { src: "/ClinicManagerDocs/assets/img/4.png", title: "Patient Registration" },
+  { src: "/ClinicManagerDocs/assets/img/5.png", title: "Check-in Manager" },
+  { src: "/ClinicManagerDocs/assets/img/6.png", title: "Clinical Visit" },
+  { src: "/ClinicManagerDocs/assets/img/7.png", title: "Billing Console" },
+  { src: "/ClinicManagerDocs/assets/img/8.png", title: "Inventory List" },
+  { src: "/ClinicManagerDocs/assets/img/9.png", title: "Staff Controls" },
+  { src: "/ClinicManagerDocs/assets/img/10.png", title: "Reporting Analytics" },
 ];
 
 const Screenshots = () => {

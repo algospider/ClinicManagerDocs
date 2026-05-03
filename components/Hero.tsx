@@ -59,7 +59,7 @@ const Hero = () => {
                 <div className="h-[64px] w-[3px] bg-slate-900 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                 <div className="rounded-[2.5rem] overflow-hidden w-full h-full bg-white">
                   <img
-                    src="assets/img/1.png"
+                    src="/ClinicManagerDocs/assets/img/1.png"
                     alt="App Dashboard"
                     className="w-full h-full object-cover"
                   />

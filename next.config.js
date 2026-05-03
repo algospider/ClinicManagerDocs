@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Add base path if deploying to a subfolder on GitHub Pages
-  // basePath: '/Ramm', 
+  basePath: '/ClinicManagerDocs',
+  assetPrefix: '/ClinicManagerDocs',
 };
 
 module.exports = nextConfig;
