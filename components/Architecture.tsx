@@ -44,8 +44,8 @@ const Architecture = () => {
                 <Globe size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Real-time Sync (Firebase)</h3>
-                <p className="text-slate-600">Two-way synchronization for patient records, visit status, and pharmacy inventory across all authorized devices.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Real-time Signaling</h3>
+                <p className="text-slate-600">Custom <code>SignalingManager</code> built on Firebase Realtime DB for instant notifications between doctors and front-desk staff.</p>
               </div>
             </div>
 
@@ -54,8 +54,8 @@ const Architecture = () => {
                 <Server size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Admin Panel</h3>
-                <p className="text-slate-600">Centralized control for inventory management, staff permissions, and clinic-wide analytics.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Multi-Tenant Admin</h3>
+                <p className="text-slate-600">Enterprise staff management with role-based access control (RBAC). Manage inventory and revenue across multiple branches.</p>
               </div>
             </div>
           </div>

@@ -44,33 +44,31 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="flex-1 relative w-full max-w-md lg:max-w-none">
+          <div className="flex-1 relative w-full max-w-2xl lg:max-w-none">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative z-10"
             >
-              {/* Mockup Frame */}
-              <div className="relative mx-auto border-slate-900 bg-slate-900 border-[14px] rounded-[3.5rem] h-[600px] w-[300px] shadow-[0_0_50px_rgba(0,0,0,0.1)]">
-                <div className="h-[32px] w-[3px] bg-slate-900 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-slate-900 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-slate-900 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                <div className="h-[64px] w-[3px] bg-slate-900 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-                <div className="rounded-[2.5rem] overflow-hidden w-full h-full bg-white">
+              {/* Tablet/Laptop Frame */}
+              <div className="relative mx-auto bg-slate-900 rounded-[2rem] p-2 shadow-2xl border-[8px] border-slate-800">
+                <div className="rounded-[1.5rem] overflow-hidden bg-white aspect-[16/10]">
                   <img
                     src="/ClinicManagerDocs/assets/img/home.jpg"
-                    alt="Clinic Manager Home"
+                    alt="Clinic Manager Dashboard"
                     className="w-full h-full object-cover"
                   />
                 </div>
+                {/* Home Button / Detail */}
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-slate-700 rounded-full mb-1"></div>
               </div>
               
-              {/* Floating Cards */}
+              {/* Floating Cards - Repositioned for Tablet */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-12 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block"
+                className="absolute -top-10 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block z-20"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">✓</div>
@@ -84,13 +82,13 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-12 -left-16 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block"
+                className="absolute -bottom-8 -left-8 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block z-20"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">⚡</div>
                   <div>
-                    <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Real-time</div>
-                    <div className="text-sm font-bold text-slate-800">12 Patients Waiting</div>
+                    <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Signals</div>
+                    <div className="text-sm font-bold text-slate-800">Real-time Ready</div>
                   </div>
                 </div>
               </motion.div>

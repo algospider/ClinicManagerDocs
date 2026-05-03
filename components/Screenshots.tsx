@@ -46,18 +46,18 @@ const Screenshots = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex-none w-[280px] snap-center"
+                className="flex-none w-[400px] snap-center"
               >
-                <div className="relative aspect-[9/19] bg-slate-800 rounded-[2.5rem] p-3 border border-slate-700 shadow-2xl">
-                  <div className="overflow-hidden rounded-[2rem] w-full h-full bg-slate-700">
+                <div className="relative aspect-[16/10] bg-slate-800 rounded-[1.5rem] p-2 border border-slate-700 shadow-2xl">
+                  <div className="overflow-hidden rounded-[1rem] w-full h-full bg-slate-700">
                     <img
                       src={screen.src}
                       alt={screen.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 whitespace-nowrap">
-                    <p className="text-xs font-bold text-slate-900">{screen.title}</p>
+                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-6 py-2 rounded-full shadow-lg border border-slate-100 whitespace-nowrap z-10">
+                    <p className="text-sm font-bold text-slate-900">{screen.title}</p>
                   </div>
                 </div>
               </motion.div>

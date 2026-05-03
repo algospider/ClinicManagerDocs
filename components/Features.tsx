@@ -2,42 +2,42 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, ClipboardList, CreditCard, BarChart3, ShieldCheck, Zap } from 'lucide-react';
+import { Users, ClipboardList, CreditCard, BarChart3, ShieldCheck, Zap, Bell, Package, ScanLine } from 'lucide-react';
 
 const features = [
   {
-    title: "Patient Registration",
-    description: "Quick registration with duplicate detection. Search by name or phone and maintain complete visit history.",
-    icon: <Users className="w-6 h-6" />,
+    title: "Real-time Signaling",
+    description: "Custom signaling system to alert doctors when patients are checked-in. Instant notifications across all staff devices.",
+    icon: <Bell className="w-6 h-6" />,
     color: "bg-blue-500",
   },
   {
-    title: "Barcode Scanning",
-    description: "Integrated medicine scanning for the pharmacy module. Real-time inventory updates with each sale.",
-    icon: <Zap className="w-6 h-6" />,
+    title: "Master Inventory",
+    description: "Centralized stock management. Sync pharmacy inventory from Admin to all counter devices automatically.",
+    icon: <Package className="w-6 h-6" />,
     color: "bg-emerald-500",
   },
   {
-    title: "UPI + Cash Billing",
-    description: "Generate professional print-ready bills with automated totals and multi-mode payment support.",
-    icon: <CreditCard className="w-6 h-6" />,
+    title: "Barcode Billing",
+    description: "Scan medicine barcodes for lightning-fast billing. Generate secure UPI QR codes for easy payments.",
+    icon: <ScanLine className="w-6 h-6" />,
     color: "bg-indigo-500",
   },
   {
-    title: "Role-Based Access",
-    description: "Staff authorization and role-based permissions to ensure data security and operational integrity.",
+    title: "Multi-Tenant Roles",
+    description: "Manage multiple clinics or branches with a single account. Switch between workspaces seamlessly.",
     icon: <ShieldCheck className="w-6 h-6" />,
     color: "bg-rose-500",
   },
   {
-    title: "Inventory Manager",
-    description: "Manage clinical stock levels from the Admin panel with automated low-stock notifications.",
+    title: "Patient Journey",
+    description: "Full history of symptoms, diagnosis, and prescriptions. Track long-term health trends easily.",
     icon: <ClipboardList className="w-6 h-6" />,
     color: "bg-amber-500",
   },
   {
-    title: "Cloud Sync & Backup",
-    description: "Offline-first architecture that syncs data to the cloud automatically when internet is available.",
+    title: "Offline-First Sync",
+    description: "Keep working during internet outages. Data mirrors to Firebase cloud once connectivity is restored.",
     icon: <Zap className="w-6 h-6" />,
     color: "bg-purple-500",
   },
