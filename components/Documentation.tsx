@@ -39,7 +39,7 @@ const Documentation = () => {
         <ol className="space-y-6 list-decimal list-inside">
           <li className="text-slate-600">
             <span className="font-bold text-slate-900 ml-2">Build APK:</span>
-            <p className="mt-2 ml-7">Navigate to `Build > Build Bundle(s) / APK(s) > Build APK(s)` in Android Studio.</p>
+            <p className="mt-2 ml-7">Navigate to `Build &gt; Build Bundle(s) / APK(s) &gt; Build APK(s)` in Android Studio.</p>
           </li>
           <li className="text-slate-600">
             <span className="font-bold text-slate-900 ml-2">Install on Device:</span>
