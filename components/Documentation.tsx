@@ -113,34 +113,6 @@ const Documentation = () => {
         </div>
       </div>
     ),
-    usage: (
-      <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Core Workflow Guide</h3>
-        <div className="space-y-4">
-          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
-            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">1</div>
-            <div>
-              <div className="font-bold text-slate-900">Check-in & Signaling</div>
-              <p className="text-sm text-slate-500">Reception checks in the patient. Use the "Signal" button to instantly notify the doctor's device.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
-            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">2</div>
-            <div>
-              <div className="font-bold text-slate-900">Inventory & Pharmacy</div>
-              <p className="text-sm text-slate-500">Admin manages master stock. Pharmacy staff uses barcode scanner for accurate billing.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
-            <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">3</div>
-            <div>
-              <div className="font-bold text-slate-900">Financial Reports</div>
-              <p className="text-sm text-slate-500">View revenue breakdown by category and export as PDF for audit.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
   };
 
   return (
