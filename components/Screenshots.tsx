@@ -4,16 +4,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const screenshots = [
-  { src: "/ClinicManagerDocs/assets/img/1.png", title: "Login Screen" },
-  { src: "/ClinicManagerDocs/assets/img/2.png", title: "Dashboard" },
-  { src: "/ClinicManagerDocs/assets/img/3.png", title: "Patient Search" },
-  { src: "/ClinicManagerDocs/assets/img/4.png", title: "Patient Registration" },
-  { src: "/ClinicManagerDocs/assets/img/5.png", title: "Check-in Manager" },
-  { src: "/ClinicManagerDocs/assets/img/6.png", title: "Clinical Visit" },
-  { src: "/ClinicManagerDocs/assets/img/7.png", title: "Billing Console" },
-  { src: "/ClinicManagerDocs/assets/img/8.png", title: "Inventory List" },
-  { src: "/ClinicManagerDocs/assets/img/9.png", title: "Staff Controls" },
-  { src: "/ClinicManagerDocs/assets/img/10.png", title: "Reporting Analytics" },
+  { src: "/ClinicManagerDocs/assets/img/login.jpg", title: "Secure Login" },
+  { src: "/ClinicManagerDocs/assets/img/permission.jpg", title: "Smart Onboarding" },
+  { src: "/ClinicManagerDocs/assets/img/home.jpg", title: "Clinic Dashboard" },
+  { src: "/ClinicManagerDocs/assets/img/pharmacy.jpg", title: "Pharmacy & Billing" },
+  { src: "/ClinicManagerDocs/assets/img/history.jpg", title: "Visit History" },
+  { src: "/ClinicManagerDocs/assets/img/inventory.jpg", title: "Inventory Master" },
+  { src: "/ClinicManagerDocs/assets/img/notification.jpg", title: "Real-time Signals" },
+  { src: "/ClinicManagerDocs/assets/img/rolemanagement.jpg", title: "Staff Authorization" },
+  { src: "/ClinicManagerDocs/assets/img/report.jpg", title: "Financial Reports" },
+  { src: "/ClinicManagerDocs/assets/img/settings.jpg", title: "App Configuration" },
+  { src: "/ClinicManagerDocs/assets/img/usermanual.jpg", title: "Integrated Help" },
 ];
 
 const Screenshots = () => {

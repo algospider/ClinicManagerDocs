@@ -60,9 +60,9 @@ const Documentation = () => {
           <h4 className="font-bold text-primary-900 mb-2">Step-by-step Setup:</h4>
           <ol className="list-decimal list-inside text-primary-800 space-y-2 text-sm">
             <li>Create a project in <a href="https://console.firebase.google.com" className="underline font-bold">Firebase Console</a>.</li>
-            <li>Add an Android App with package name <code className="bg-primary-100 px-1 rounded">com.mohan.clinicmanager</code>.</li>
+            <li>Add an Android App with package name <code className="bg-primary-100 px-1 rounded">com.ramm.clinicmanager</code>.</li>
             <li>Download <code className="bg-primary-100 px-1 rounded">google-services.json</code> and place it in the <code className="bg-primary-100 px-1 rounded">app/</code> directory.</li>
-            <li>Enable <span className="font-bold">Realtime Database</span> and <span className="font-bold">Firebase Auth</span>.</li>
+            <li>Enable <span className="font-bold">Realtime Database</span> (for Signaling & Sync) and <span className="font-bold">Firebase Auth</span>.</li>
           </ol>
         </div>
       </div>

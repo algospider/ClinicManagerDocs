@@ -59,8 +59,8 @@ const Hero = () => {
                 <div className="h-[64px] w-[3px] bg-slate-900 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                 <div className="rounded-[2.5rem] overflow-hidden w-full h-full bg-white">
                   <img
-                    src="/ClinicManagerDocs/assets/img/1.png"
-                    alt="App Dashboard"
+                    src="/ClinicManagerDocs/assets/img/home.jpg"
+                    alt="Clinic Manager Home"
                     className="w-full h-full object-cover"
                   />
                 </div>
