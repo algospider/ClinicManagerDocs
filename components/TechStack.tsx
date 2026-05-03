@@ -4,14 +4,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const tech = [
-  { name: "Android SDK", level: "Target 34", icon: "🤖" },
-  { name: "Java/Kotlin", level: "Core Logic", icon: "☕" },
-  { name: "Firebase", level: "Real-time DB", icon: "🔥" },
-  { name: "SQLite", level: "Persistence", icon: "📦" },
-  { name: "Lottie", level: "Animations", icon: "✨" },
-  { name: "Zxing", level: "Barcode", icon: "📷" },
-  { name: "Retrofit", level: "Networking", icon: "🌐" },
-  { name: "Material 3", level: "UI/UX", icon: "🎨" },
+  { name: "Firebase Realtime", level: "Low-latency Signaling", icon: "🔥" },
+  { name: "SQLite Persistence", level: "Offline-First Mirroring", icon: "📦" },
+  { name: "Zxing QR Utility", level: "CMOS-Optimized Scans", icon: "📷" },
+  { name: "Lottie Framework", level: "Vector Animations", icon: "✨" },
+  { name: "Google Auth", level: "Secure SSO Onboarding", icon: "🔐" },
+  { name: "UPISDK / Intent", level: "Direct Merchant Pay", icon: "💳" },
+  { name: "Material Components", level: "Modern UI/UX Patterns", icon: "🎨" },
+  { name: "SignalingManager", level: "Multi-Device Messaging", icon: "📡" },
 ];
 
 const TechStack = () => {

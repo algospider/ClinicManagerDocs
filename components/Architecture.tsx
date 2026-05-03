@@ -44,8 +44,8 @@ const Architecture = () => {
                 <Globe size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Real-time Signaling</h3>
-                <p className="text-slate-600">Custom <code>SignalingManager</code> built on Firebase Realtime DB for instant notifications between doctors and front-desk staff.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">SignalingManager Layer</h3>
+                <p className="text-slate-600">Built on a customized listener pattern using Firebase Realtime DB. Decouples front-desk notifications from core clinical visit logic for &lt;100ms latency.</p>
               </div>
             </div>
 
@@ -54,8 +54,8 @@ const Architecture = () => {
                 <Server size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Multi-Tenant Admin</h3>
-                <p className="text-slate-600">Enterprise staff management with role-based access control (RBAC). Manage inventory and revenue across multiple branches.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Two-Way SyncManager</h3>
+                <p className="text-slate-600">Orchestrates data consistency between SQLite local cache and Firebase Cloud. Features smart conflict resolution and delta-only sync for bandwidth efficiency.</p>
               </div>
             </div>
           </div>

@@ -54,15 +54,27 @@ const Documentation = () => {
     ),
     firebase: (
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Firebase Integration</h3>
-        <p className="text-slate-600">Clinic Manager uses Firebase for real-time signaling and cloud backup.</p>
+        <h3 className="text-2xl font-bold text-slate-900">Real-time Backend Integration</h3>
+        <p className="text-slate-600">Clinic Manager utilizes a sophisticated multi-layer backend strategy powered by Firebase and custom management classes.</p>
+        
+        <div className="grid sm:grid-cols-2 gap-4 mt-4">
+          <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+            <h4 className="font-bold text-slate-900 mb-2">SignalingManager.java</h4>
+            <p className="text-xs text-slate-500 leading-relaxed">Handles instant node-to-node communication. Uses Firebase Realtime DB nodes to trigger hardware/UI alerts on staff devices with minimal latency.</p>
+          </div>
+          <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+            <h4 className="font-bold text-slate-900 mb-2">SyncManager.java</h4>
+            <p className="text-xs text-slate-500 leading-relaxed">The orchestration engine for offline-first persistence. Manages Delta-Sync logic to ensure SQLite and Cloud DB stay identical.</p>
+          </div>
+        </div>
+
         <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6">
-          <h4 className="font-bold text-primary-900 mb-2">Step-by-step Setup:</h4>
+          <h4 className="font-bold text-primary-900 mb-2">Setup Requirements:</h4>
           <ol className="list-decimal list-inside text-primary-800 space-y-2 text-sm">
-            <li>Create a project in <a href="https://console.firebase.google.com" className="underline font-bold">Firebase Console</a>.</li>
-            <li>Add an Android App with package name <code className="bg-primary-100 px-1 rounded">com.ramm.clinicmanager</code>.</li>
-            <li>Download <code className="bg-primary-100 px-1 rounded">google-services.json</code> and place it in the <code className="bg-primary-100 px-1 rounded">app/</code> directory.</li>
-            <li>Enable <span className="font-bold">Realtime Database</span> (for Signaling & Sync) and <span className="font-bold">Firebase Auth</span>.</li>
+            <li>Create project in <a href="https://console.firebase.google.com" className="underline font-bold">Firebase Console</a>.</li>
+            <li>Add Android App: <code className="bg-primary-100 px-1 rounded">com.ramm.clinicmanager</code>.</li>
+            <li>Enable <strong>Realtime Database</strong> & <strong>Auth</strong>.</li>
+            <li>Enable <strong>Disk Persistence</strong> in Firebase Database settings for full offline support.</li>
           </ol>
         </div>
       </div>
