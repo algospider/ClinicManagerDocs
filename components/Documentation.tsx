@@ -10,26 +10,45 @@ const Documentation = () => {
   const tabs = [
     { id: 'setup', label: 'Setup Guide', icon: <Settings size={18} /> },
     { id: 'installation', label: 'Installation', icon: <Terminal size={18} /> },
-    { id: 'firebase', label: 'Firebase Config', icon: <Database size={18} /> },
-    { id: 'permissions', label: 'Permissions', icon: <Shield size={18} /> },
+    { id: 'database', label: 'DB Schema', icon: <Database size={18} /> },
+    { id: 'firebase', label: 'Backend Logic', icon: <Database size={18} /> },
     { id: 'usage', label: 'Usage', icon: <Smartphone size={18} /> },
   ];
 
   const content = {
     setup: (
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Getting Started</h3>
-        <p className="text-slate-600">Before building the application, ensure you have the following requirements met:</p>
+        <h3 className="text-2xl font-bold text-slate-900">Developer Environment</h3>
+        <p className="text-slate-600">Clinic Manager is built with a heavy focus on data integrity and modularity.</p>
         <ul className="space-y-4 list-disc list-inside text-slate-600">
-          <li><span className="font-bold text-slate-900">Android Studio Iguana</span> or later</li>
-          <li><span className="font-bold text-slate-900">Java Development Kit (JDK) 17</span></li>
-          <li><span className="font-bold text-slate-900">Android SDK 34</span> (Target)</li>
-          <li><span className="font-bold text-slate-900">Firebase Project</span> for synchronization</li>
+          <li><span className="font-bold text-slate-900">Android SDK 34</span> (Iguana / Hedgehog)</li>
+          <li><span className="font-bold text-slate-900">Java 17</span> (Toolchain)</li>
+          <li><span className="font-bold text-slate-900">SQLite v3</span> (Local Persistence)</li>
+          <li><span className="font-bold text-slate-900">Firebase Realtime DB</span> (Signaling)</li>
         </ul>
         <div className="bg-slate-900 rounded-2xl p-6 text-slate-300 font-mono text-sm">
-          <p className="text-primary-400"># Clone the repository</p>
+          <p className="text-primary-400"># Clone the core repository</p>
           <p>git clone https://github.com/algospider/Ramm.git</p>
-          <p className="text-primary-400 mt-4"># Open in Android Studio and sync Gradle</p>
+        </div>
+      </div>
+    ),
+    database: (
+      <div className="space-y-6">
+        <h3 className="text-2xl font-bold text-slate-900">Relational SQLite Schema</h3>
+        <p className="text-slate-600">The app uses a <code>DBHelper</code> with versioned migration support (Current: v7).</p>
+        <div className="space-y-4">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: patients</div>
+            <p className="text-xs text-slate-500 italic">uuid (PK), name, phone, gender, total_visits, last_updated</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: visits</div>
+            <p className="text-xs text-slate-500 italic">uuid (PK), patient_uuid (FK), symptoms, diagnosis, medicine_items, amount_paid</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: categories</div>
+            <p className="text-xs text-slate-500 italic">id, cat_name (Unique)</p>
+          </div>
         </div>
       </div>
     ),

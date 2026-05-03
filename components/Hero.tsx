@@ -44,57 +44,81 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="flex-1 relative w-full max-w-md lg:max-w-none">
+          <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative z-10"
             >
-              {/* Premium Portrait Frame */}
-              <div className="relative mx-auto border-slate-900 bg-slate-900 border-[14px] rounded-[3.5rem] h-[650px] w-[320px] shadow-[0_0_80px_rgba(0,0,0,0.15)] ring-1 ring-slate-700">
-                <div className="h-[32px] w-[3px] bg-slate-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-slate-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-slate-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                <div className="h-[64px] w-[3px] bg-slate-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-                <div className="rounded-[2.5rem] overflow-hidden w-full h-full bg-white shadow-inner">
-                  <img
-                    src="/ClinicManagerDocs/assets/img/home.jpg"
-                    alt="Clinic Manager Dashboard"
-                    className="w-full h-full object-cover"
-                  />
+              {/* Ultra-Premium Glass Device Frame */}
+              <div className="relative mx-auto bg-[#0F172A] rounded-[3.5rem] p-3 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border-[1px] border-white/10 ring-1 ring-slate-800/50">
+                {/* Device Inner Content */}
+                <div className="relative rounded-[2.8rem] overflow-hidden bg-white h-[700px] w-full group">
+                  <motion.div 
+                    className="absolute inset-0"
+                    whileHover={{ y: -100 }}
+                    transition={{ duration: 4, ease: "linear" }}
+                  >
+                    <img
+                      src="/ClinicManagerDocs/assets/img/home.jpg"
+                      alt="Clinic Manager Enterprise Dashboard"
+                      className="w-full h-auto object-cover"
+                    />
+                  </motion.div>
+                  
+                  {/* Glass Overlay for Depth */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/10 via-transparent to-black/5"></div>
                 </div>
+
+                {/* Device Hardware Details */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#0F172A] rounded-b-3xl z-30">
+                   <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-slate-800 rounded-full"></div>
+                </div>
+                <div className="h-[40px] w-[4px] bg-slate-800 absolute -start-[4px] top-[120px] rounded-s-lg border-l border-white/10"></div>
+                <div className="h-[60px] w-[4px] bg-slate-800 absolute -start-[4px] top-[180px] rounded-s-lg border-l border-white/10"></div>
               </div>
               
-              {/* Floating Cards */}
+              {/* Dynamic Logic Indicators */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-12 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-2xl border border-slate-100 hidden sm:block z-20"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute -top-10 -right-8 bg-white/90 backdrop-blur-md p-5 rounded-[2rem] shadow-2xl border border-white hidden lg:block z-40"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">✓</div>
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600">
+                      <Zap size={24} fill="currentColor" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white animate-ping"></div>
+                  </div>
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Cloud Sync</div>
-                    <div className="text-sm font-extrabold text-slate-800 tracking-tight">Real-time DB Active</div>
+                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">SignalingManager</div>
+                    <div className="text-sm font-black text-slate-900 tracking-tight">Latency &lt; 85ms</div>
                   </div>
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-12 -left-16 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-2xl border border-slate-100 hidden sm:block z-20"
+                animate={{ x: [0, -5, 0] }}
+                transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+                className="absolute bottom-10 -left-12 bg-slate-900/95 backdrop-blur-md p-5 rounded-[2rem] shadow-2xl border border-white/10 hidden lg:block z-40"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold">⚡</div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary-500/20 rounded-2xl flex items-center justify-center text-primary-400">
+                    <Database size={24} />
+                  </div>
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Signaling</div>
-                    <div className="text-sm font-extrabold text-slate-800 tracking-tight">SignalManager v1.0</div>
+                    <div className="text-[10px] text-primary-400/60 font-bold uppercase tracking-widest">SQLite Delta-Sync</div>
+                    <div className="text-sm font-black text-white tracking-tight">Secure AES-256</div>
                   </div>
                 </div>
               </motion.div>
             </motion.div>
+            
+            {/* Ambient Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-primary-200/20 rounded-full blur-[120px] -z-10"></div>
+          </div>
 
             {/* Background Glows */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary-100 rounded-full blur-3xl opacity-30 -z-10"></div>

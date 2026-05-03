@@ -4,6 +4,7 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import Features from "@/components/Features";
 import UserFlow from "@/components/UserFlow";
+import SystemDesign from "@/components/SystemDesign";
 import Screenshots from "@/components/Screenshots";
 import Documentation from "@/components/Documentation";
 import Architecture from "@/components/Architecture";
@@ -21,6 +22,7 @@ export default function Home() {
       <SolutionSection />
       <Features />
       <UserFlow />
+      <SystemDesign />
       <Screenshots />
       <Documentation />
       <Architecture />
