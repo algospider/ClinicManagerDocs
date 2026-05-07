@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Database, Shield, Smartphone } from 'lucide-react';
+import { Database, Shield, Smartphone, Cloud, Settings } from 'lucide-react';
 
 const Documentation = () => {
   const [activeTab, setActiveTab] = useState('usage');
@@ -10,8 +10,9 @@ const Documentation = () => {
   const tabs = [
     { id: 'usage', label: 'Usage Guide', icon: <Smartphone size={18} /> },
     { id: 'database', label: 'DB Schema', icon: <Database size={18} /> },
-    { id: 'firebase', label: 'Backend Logic', icon: <Database size={18} /> },
+    { id: 'firebase', label: 'Firebase Model', icon: <Cloud size={18} /> },
     { id: 'permissions', label: 'Permissions', icon: <Shield size={18} /> },
+    { id: 'setup', label: 'Build Setup', icon: <Settings size={18} /> },
   ];
 
   const content = {
@@ -23,21 +24,21 @@ const Documentation = () => {
             <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">1</div>
             <div>
               <div className="font-bold text-slate-900">Check-in & Signaling</div>
-              <p className="text-sm text-slate-500">Reception checks in the patient. Use the "Signal" button to instantly notify the doctor's device.</p>
+              <p className="text-sm text-slate-500">Search by phone or register a patient, collect the doctor fee, and use Signals to notify the doctor or staff device.</p>
             </div>
           </div>
           <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
             <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">2</div>
             <div>
-              <div className="font-bold text-slate-900">Inventory & Pharmacy</div>
-              <p className="text-sm text-slate-500">Admin manages master stock. Pharmacy staff uses barcode scanner for accurate billing.</p>
+              <div className="font-bold text-slate-900">Consultation & Pharmacy</div>
+              <p className="text-sm text-slate-500">Record category, symptoms, diagnosis, payment mode, and then bill medicines from the same visit context.</p>
             </div>
           </div>
           <div className="flex gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-100">
             <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold shrink-0">3</div>
             <div>
-              <div className="font-bold text-slate-900">Financial Reports</div>
-              <p className="text-sm text-slate-500">View revenue breakdown by category and export as PDF for audit.</p>
+              <div className="font-bold text-slate-900">Admin Operations</div>
+              <p className="text-sm text-slate-500">Admins manage staff invitations, medicine inventory, illness categories, financial reports, and backup or restore.</p>
             </div>
           </div>
         </div>
@@ -46,36 +47,40 @@ const Documentation = () => {
     database: (
       <div className="space-y-6">
         <h3 className="text-2xl font-bold text-slate-900">Relational SQLite Schema</h3>
-        <p className="text-slate-600">The app uses a <code>DBHelper</code> with versioned migration support (Current: v7).</p>
+        <p className="text-slate-600">The Android app uses <code>DBHelper</code> with versioned migrations. Current schema version: <code>7</code>.</p>
         <div className="space-y-4">
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: patients</div>
-            <p className="text-xs text-slate-500 italic">uuid (PK), name, phone, gender, total_visits, last_updated</p>
+            <p className="text-xs text-slate-500 italic">uuid, name, age, phone, gender, created_by, created_by_role, last_updated, is_deleted</p>
           </div>
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: visits</div>
-            <p className="text-xs text-slate-500 italic">uuid (PK), patient_uuid (FK), symptoms, diagnosis, medicine_items, amount_paid</p>
+            <p className="text-xs text-slate-500 italic">uuid, patient_uuid, visit_date, visit_timestamp, category, symptoms, diagnosis, medicine_items, totals, payment_mode, created_by_name, is_medicine_billed</p>
           </div>
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div className="font-mono text-xs font-bold text-primary-600 mb-1">TABLE: categories</div>
             <p className="text-xs text-slate-500 italic">id, cat_name (Unique)</p>
+          </div>
+          <div className="bg-slate-900 p-4 rounded-xl">
+            <div className="font-mono text-xs font-bold text-white mb-1">Local files</div>
+            <p className="text-xs text-slate-300 italic">/clinic/medicines.txt stores inventory names, prices, codes, stock, and expiry; /Clinic/Backup stores database backups.</p>
           </div>
         </div>
       </div>
     ),
     firebase: (
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-slate-900">Real-time Backend Integration</h3>
-        <p className="text-slate-600">Clinic Manager utilizes a sophisticated multi-layer backend strategy powered by Firebase and custom management classes.</p>
+        <h3 className="text-2xl font-bold text-slate-900">Firebase Backend Model</h3>
+        <p className="text-slate-600">Firebase Realtime Database handles clinic workspaces, staff invitations, shared settings, signals, and cloud sync. SQLite remains the local source of day-to-day app responsiveness.</p>
         
         <div className="grid sm:grid-cols-2 gap-4 mt-4">
           <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-            <h4 className="font-bold text-slate-900 mb-2">SignalingManager.java</h4>
-            <p className="text-xs text-slate-500 leading-relaxed">Handles instant node-to-node communication. Uses Firebase Realtime DB nodes to trigger hardware/UI alerts on staff devices with minimal latency.</p>
+            <h4 className="font-bold text-slate-900 mb-2">Workspace membership</h4>
+            <p className="text-xs text-slate-500 leading-relaxed"><code>memberships_by_uid</code>, <code>invitations</code>, <code>users/&lt;clinicId&gt;/staff</code>, and <code>email_index</code> support staff invites and workspace switching.</p>
           </div>
           <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-            <h4 className="font-bold text-slate-900 mb-2">SyncManager.java</h4>
-            <p className="text-xs text-slate-500 leading-relaxed">The orchestration engine for offline-first persistence. Manages Delta-Sync logic to ensure SQLite and Cloud DB stay identical.</p>
+            <h4 className="font-bold text-slate-900 mb-2">Signals and sync</h4>
+            <p className="text-xs text-slate-500 leading-relaxed"><code>SignalingManager</code> wraps Firebase signal methods, while <code>FirebaseManager</code> pulls patients, visits, categories, settings, and medicine inventory.</p>
           </div>
         </div>
 
@@ -83,9 +88,9 @@ const Documentation = () => {
           <h4 className="font-bold text-primary-900 mb-2">Setup Requirements:</h4>
           <ol className="list-decimal list-inside text-primary-800 space-y-2 text-sm">
             <li>Create project in <a href="https://console.firebase.google.com" className="underline font-bold">Firebase Console</a>.</li>
-            <li>Add Android App: <code className="bg-primary-100 px-1 rounded">com.ramm.clinicmanager</code>.</li>
+            <li>Add Android App: <code className="bg-primary-100 px-1 rounded">com.ramm</code>.</li>
             <li>Enable <strong>Realtime Database</strong> & <strong>Auth</strong>.</li>
-            <li>Enable <strong>Disk Persistence</strong> in Firebase Database settings for full offline support.</li>
+            <li>Place <code className="bg-primary-100 px-1 rounded">google-services.json</code> in the Android app module.</li>
           </ol>
         </div>
       </div>
@@ -103,12 +108,39 @@ const Documentation = () => {
             <p className="text-xs text-slate-500">Used for Firebase synchronization and real-time signaling between devices.</p>
           </div>
           <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-            <div className="font-bold text-slate-900 mb-1">READ_EXTERNAL_STORAGE</div>
-            <p className="text-xs text-slate-500">Accessing clinical resources and document exports.</p>
+            <div className="font-bold text-slate-900 mb-1">STORAGE</div>
+            <p className="text-xs text-slate-500">Used for inventory text files, database backup files, restore imports, and generated documents.</p>
           </div>
           <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-            <div className="font-bold text-slate-900 mb-1">VIBRATE</div>
-            <p className="text-xs text-slate-500">Haptic feedback for successful scans and critical alerts.</p>
+            <div className="font-bold text-slate-900 mb-1">POST_NOTIFICATIONS</div>
+            <p className="text-xs text-slate-500">Required on newer Android versions for foreground sync and clinic signal notifications.</p>
+          </div>
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="font-bold text-slate-900 mb-1">FOREGROUND_SERVICE_DATA_SYNC</div>
+            <p className="text-xs text-slate-500">Keeps the signal listener and Firebase sync service active while the app coordinates shared clinic data.</p>
+          </div>
+        </div>
+      </div>
+    ),
+    setup: (
+      <div className="space-y-6">
+        <h3 className="text-2xl font-bold text-slate-900">Build and Release Notes</h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="font-bold text-slate-900 mb-1">Android target</div>
+            <p className="text-xs text-slate-500">Namespace and application ID are <code>com.ramm</code>. The app targets SDK 34, minimum SDK 24, and Java 17.</p>
+          </div>
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="font-bold text-slate-900 mb-1">Firebase dependencies</div>
+            <p className="text-xs text-slate-500">Uses Firebase Auth, Realtime Database, Google Sign-In, and optional custom database URL saved in app settings.</p>
+          </div>
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="font-bold text-slate-900 mb-1">Scanning and QR</div>
+            <p className="text-xs text-slate-500">CameraX and ML Kit read product barcodes. ZXing is kept for high-contrast UPI QR generation.</p>
+          </div>
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="font-bold text-slate-900 mb-1">Release signing</div>
+            <p className="text-xs text-slate-500">Release builds read signing details from CI variables or local <code>secret.properties</code>.</p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Zap, Database, ShieldCheck } from 'lucide-react';
+import { BookOpen, Bell, Database, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -17,13 +17,13 @@ const Hero = () => {
             >
               <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary-50 text-primary-700 text-xs font-black tracking-[0.2em] mb-8 border border-primary-100 shadow-sm uppercase">
                 <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-                Enterprise Clinical OS v1.0
+                Ramm Healthcare Android App v1.0
               </span>
               <h1 className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] mb-8 uppercase">
-                Digital Clinic Manager for <span className="text-primary-600">Modern Practices</span>
+                Digital Clinic Manager for <span className="text-primary-600">Small Clinics</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-medium">
-                A robust, offline-first clinical workspace designed for seamless coordination between doctors, pharmacy, and management. One App. Complete Clinic Management.
+                Ramm turns patient registration, consultation fees, pharmacy billing, inventory, staff roles, and clinic signals into one offline-capable Android workflow backed by SQLite and Firebase.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <a
@@ -38,13 +38,13 @@ const Hero = () => {
               {/* Trust Badge / Features Mini */}
               <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-6 grayscale opacity-50">
                  <div className="flex items-center gap-2 font-bold text-xs tracking-widest uppercase">
-                    <ShieldCheck size={16} /> 256-bit AES
+                    <ShieldCheck size={16} /> Role Access
                  </div>
                  <div className="flex items-center gap-2 font-bold text-xs tracking-widest uppercase">
                     <Database size={16} /> Offline-First
                  </div>
                  <div className="flex items-center gap-2 font-bold text-xs tracking-widest uppercase">
-                    <Zap size={16} /> &lt;100ms Latency
+                    <Bell size={16} /> Live Signals
                  </div>
               </div>
             </motion.div>
@@ -99,13 +99,13 @@ const Hero = () => {
                 <div className="flex items-center gap-4">
                   <div className="relative">
                     <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600">
-                      <Zap size={24} fill="currentColor" />
+                      <Bell size={24} fill="currentColor" />
                     </div>
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white animate-ping"></div>
                   </div>
                   <div>
                     <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">SignalingManager</div>
-                    <div className="text-sm font-black text-slate-900 tracking-tight">Latency &lt; 85ms</div>
+                    <div className="text-sm font-black text-slate-900 tracking-tight">Staff alerts</div>
                   </div>
                 </div>
               </motion.div>
@@ -120,15 +120,14 @@ const Hero = () => {
                     <Database size={24} />
                   </div>
                   <div>
-                    <div className="text-[10px] text-primary-400/60 font-bold uppercase tracking-widest">SQLite Delta-Sync</div>
-                    <div className="text-sm font-black text-white tracking-tight">Secure AES-256</div>
+                    <div className="text-[10px] text-primary-400/60 font-bold uppercase tracking-widest">SQLite + Firebase</div>
+                    <div className="text-sm font-black text-white tracking-tight">Local-first records</div>
                   </div>
                 </div>
               </motion.div>
             </motion.div>
             
-            {/* Ambient Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-primary-200/20 rounded-full blur-[120px] -z-10"></div>
+            <div className="absolute inset-x-0 bottom-8 h-24 bg-primary-100/50 blur-[90px] -z-10"></div>
           </div>
         </div>
       </div>

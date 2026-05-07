@@ -13,22 +13,22 @@ const UserFlow = () => {
     },
     {
       title: "Consultation",
-      desc: "Doctor adds symptoms and clinical diagnosis.",
+      desc: "Doctor fee, symptoms, category, and diagnosis are stored against the visit.",
       icon: <Stethoscope className="w-6 h-6 text-primary-600" />,
     },
     {
       title: "Pharmacy",
-      desc: "Scan barcodes and add medicines to order.",
+      desc: "Scan barcodes, add medicines, apply discount, and reduce stock.",
       icon: <Beaker className="w-6 h-6 text-primary-600" />,
     },
     {
       title: "Billing",
-      desc: "Generate professional bills and collect UPI payments.",
+      desc: "Collect cash or show a UPI QR generated from configured payee details.",
       icon: <ReceiptText className="w-6 h-6 text-primary-600" />,
     },
     {
-      title: "Analytics",
-      desc: "View daily revenue and case trends on dashboard.",
+      title: "Admin Review",
+      desc: "Review reports, manage users, sync inventory, and create backups.",
       icon: <BarChart3 className="w-6 h-6 text-primary-600" />,
     }
   ];
@@ -37,8 +37,8 @@ const UserFlow = () => {
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-4">The Seamless <span className="text-primary-600">Patient Journey</span></h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">From reception to pharmacy, every step is optimized for speed and accuracy.</p>
+          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-4">The Clinic <span className="text-primary-600">Patient Journey</span></h2>
+          <p className="text-slate-500 max-w-2xl mx-auto">From first lookup to pharmacy billing, each step maps directly to screens in the Android app.</p>
         </div>
 
         <div className="relative">

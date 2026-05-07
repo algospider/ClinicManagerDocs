@@ -25,7 +25,7 @@ const Architecture = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Android Client Layer</h3>
-                <p className="text-slate-600">Built with Java/Kotlin using the Repository pattern. Handles complex UI states for registration, consultation, and billing.</p>
+                <p className="text-slate-600">Built as a Java Android app with Material Components, View Binding, Repository classes, and dedicated activities for login, dashboard, consultation, pharmacy, reports, backup, and settings.</p>
               </div>
             </div>
             
@@ -45,7 +45,7 @@ const Architecture = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">SignalingManager Layer</h3>
-                <p className="text-slate-600">Built on a customized listener pattern using Firebase Realtime DB. Decouples front-desk notifications from core clinical visit logic for &lt;100ms latency.</p>
+                <p className="text-slate-600">Built on Firebase Realtime Database listeners. Decouples front-desk notifications from clinical visit records, so staff alerts do not block billing or history workflows.</p>
               </div>
             </div>
 
@@ -55,13 +55,13 @@ const Architecture = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Two-Way SyncManager</h3>
-                <p className="text-slate-600">Orchestrates data consistency between SQLite local cache and Firebase Cloud. Features smart conflict resolution and delta-only sync for bandwidth efficiency.</p>
+                <p className="text-slate-600">Coordinates shared settings, patients, visits, categories, invitations, and medicine inventory between local storage and the active clinic workspace.</p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 aspect-square flex items-center justify-center overflow-hidden">
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 aspect-square flex items-center justify-center overflow-hidden">
               {/* Simplified Architecture Diagram with CSS */}
               <div className="relative w-full max-w-xs aspect-square">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-20 bg-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-xl z-20">

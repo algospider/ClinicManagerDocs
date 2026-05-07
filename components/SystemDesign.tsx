@@ -22,15 +22,15 @@ const SystemDesign = () => {
     },
     {
       title: "Pharmacy Sync",
-      desc: "Status: is_medicine_billed",
-      details: "MedicineItems (JSON), AmountTotal, Paid, Mode",
+      desc: "Visit flag: is_medicine_billed",
+      details: "Medicine items, discount flow, UPI QR, cash or online mode",
       icon: <ShoppingCart className="text-purple-600" />,
       color: "border-purple-200 bg-purple-50"
     },
     {
       title: "Master Admin",
-      desc: "Control: role_based_access",
-      details: "Inventory Master, Staff Authorization, Reports",
+      desc: "Roles: Admin, Doctor, Manager, Staff",
+      details: "Inventory master, staff invitations, reports, backup",
       icon: <BarChart className="text-amber-600" />,
       color: "border-amber-200 bg-amber-50"
     }
@@ -40,8 +40,8 @@ const SystemDesign = () => {
     <section id="system" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-4 tracking-tight uppercase">Technical <span className="text-primary-600">System Architecture</span></h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">Deep dive into the relational data flow and coordination logic of Clinic Manager.</p>
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-4 tracking-tight uppercase">Technical <span className="text-primary-600">System Design</span></h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">A practical view of how Ramm stores patient records, links pharmacy billing, and coordinates admin-controlled clinic workspaces.</p>
         </div>
 
         <div className="relative">
@@ -56,7 +56,7 @@ const SystemDesign = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`p-8 rounded-[2.5rem] border-2 ${node.color} shadow-sm relative group hover:shadow-xl transition-all duration-300`}
+                className={`p-8 rounded-2xl border-2 ${node.color} shadow-sm relative group hover:shadow-xl transition-all duration-300`}
               >
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform">
                   {node.icon}
@@ -72,12 +72,12 @@ const SystemDesign = () => {
         </div>
 
         {/* Sync Indicator */}
-        <div className="mt-16 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
+        <div className="mt-16 bg-slate-900 rounded-2xl p-12 text-white relative overflow-hidden">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
             <div className="max-w-md">
-              <h3 className="text-2xl font-bold mb-4">Atomic Delta-Sync Engine</h3>
+              <h3 className="text-2xl font-bold mb-4">Local-First Sync Contract</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Clinic Manager uses a specialized SyncManager that tracks `last_updated` and `is_deleted` flags on every row. This ensures conflict-free synchronization between local SQLite and Firebase Realtime DB.
+                Patient and visit rows carry <code>last_updated</code> and <code>is_deleted</code> fields so the app can merge local SQLite records with Firebase data without losing deleted records during sync.
               </p>
             </div>
             <div className="flex-1 flex justify-center gap-8">
